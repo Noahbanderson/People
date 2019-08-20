@@ -1,0 +1,21 @@
+<h1>People and Their Dog(s)</h1>
+<p><% @people.each do |person| %></p>
+<h2><%= person.full_name %></h2>
+<%= link_to "View Person Details", person_path(person.id) %>
+<%= link_to "Edit Person Details", edit_person_path(person.id) %>
+<%= link_to 'Destroy Person', person, method: :delete %>
+</br>
+<% person.dogs.each do |dog| %>
+<h3><%= dog.animal_name %></h3>
+<%= link_to "View Dog Details", dog_path(dog.id) %>
+<%= link_to "Edit Dog Details", edit_dog_path(dog.id) %>
+<%= link_to 'Destroy Dog', dog, method: :delete %>
+</br>
+<% end  %>
+<% end  %>
+
+<%= link_to "New Person", new_person_path %>
+<%= link_to "New Dog",  new_dog_path %>
+
+
+

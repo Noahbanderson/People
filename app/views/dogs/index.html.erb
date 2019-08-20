@@ -1,0 +1,10 @@
+<h1>The Doggos!</h1>
+<p><% @dogs.each do |dog| %></p>
+<h3><%= dog.animal_name %></h3>
+<%= link_to "View Dog Details", dog_path(dog.id) %>
+<%= link_to "Edit Dog Details", edit_dog_path(dog.id) %>
+<%= link_to 'Destroy Dog', dog, method: :delete %>
+</br>
+<% end  %>
+
+<%= link_to "New Dog",  new_dog_path %>

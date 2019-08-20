@@ -1,0 +1,11 @@
+<h1>Person: <%= @person.full_name %></h1>
+<%= @person.age %>
+<%= @person.gender %>
+</br>
+<% @person.dogs.each do |dog| %>
+<h3><%= dog.animal_name %></h3>
+<p> breed: <%= dog.breed %>. Age: <%= dog.age %> </p>
+<%end%>
+</br>
+</br>
+<%= link_to "Back", people_path %>
